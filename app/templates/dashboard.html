@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="grid grid-cols-2 gap-6">
+    <!-- Modules List (Left Panel) -->
+    <div class="bg-white p-4 shadow-md rounded">
+        <h2 class="text-lg font-bold mb-4">Modules</h2>
+        <ul class="list-disc list-inside">
+            {% for module in modules %}
+                <li>{{ module[1] }} <!-- Module Name -->
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Test Cases List (Right Panel) -->
+    <div class="bg-white p-4 shadow-md rounded">
+        <h2 class="text-lg font-bold mb-4">Test Cases</h2>
+        <a href="{{ url_for('main.add_test_case') }}" class="bg-green-500 text-white py-2 px-4 rounded">Add Test Case</a>
+        <!-- Test case list can be displayed here -->
+    </div>
+</div>
+{% endblock %}

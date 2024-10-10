@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-white p-6 shadow-md rounded">
+    <form method="POST" enctype="multipart/form-data">
+        <!-- Module ID Input Field (Replaced Dropdown) -->
+        <div class="mb-4">
+            <label for="module_id" class="block text-sm font-medium text-gray-700">Module ID:</label>
+            <input type="text" name="module_id" required class="mt-1 block w-full border border-gray-300 rounded p-2" placeholder="Enter Module ID">
+        </div>
+
+        <!-- Test Case Summary -->
+        <div class="mb-4">
+            <label for="summary" class="block text-sm font-medium text-gray-700">Test Case Summary:</label>
+            <textarea name="summary" required class="mt-1 block w-full border border-gray-300 rounded p-2"></textarea>
+        </div>
+
+        <!-- Test Case Description -->
+        <div class="mb-4">
+            <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
+            <textarea name="description" class="mt-1 block w-full border border-gray-300 rounded p-2"></textarea>
+        </div>
+
+        <!-- File Upload -->
+        <div class="mb-4">
+            <label for="attachment" class="block text-sm font-medium text-gray-700">Attachment:</label>
+            <input type="file" name="attachment" class="mt-1 block w-full border border-gray-300 rounded p-2">
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex items-center">
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded mr-2">Save</button>
+            <a href="{{ url_for('main.dashboard') }}" class="bg-gray-300 py-2 px-4 rounded">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
